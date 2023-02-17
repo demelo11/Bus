@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         anoFab: {
             type: DataTypes.INTEGER
         },
-        
+
         cor : {
             type: DataTypes.STRING
         },
