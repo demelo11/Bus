@@ -8,13 +8,13 @@ const Bus = db.busses
 //1. create product
 
 const addBus = async ( req , res ) => {
-
+console.log(req.body)
     let info = {
         marca: req.body.marca,
         chassi: req.body.chassi,
         carroceria: req.body.carroceira,
-        anoMod: req.body.anodFab,
-        anodFab: req.body.anodFab,
+        anoMod: req.body.anoMod,
+        anoFab: req.body.anoFab,
         cor: req.body.cor,
         quantidadeLugares: req.body.quantidadeLugares,
         fotos: req.body.fotos
@@ -61,7 +61,7 @@ const deleteBus= async (req, res) =>{
     res.status(200).send('deleted')
 }
 
-console.log()
+
 
 
 module.exports = {
@@ -70,6 +70,5 @@ module.exports = {
     getOneBus,
     updateBus,
     deleteBus
-
 
 }
