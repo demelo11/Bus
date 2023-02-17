@@ -20,6 +20,7 @@ const addBus = async ( req , res ) => {
         fotos: req.body.fotos
     }
     
+    
 
 
 const bus = await Bus.create(info)
@@ -60,7 +61,7 @@ const deleteBus= async (req, res) =>{
     res.status(200).send('deleted')
 }
 
-
+console.log()
 
 
 module.exports = {
