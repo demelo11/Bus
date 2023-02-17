@@ -23,11 +23,18 @@ module.exports = (sequelize, DataTypes) => {
         cor : {
             type: DataTypes.STRING
         },
-        quantidadeLugares: {
+        quantidadeLugares : {
             type: DataTypes.INTEGER
         },
         fotos: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT,
+            get() {
+             return JSON.parse(this.getDataValue('fotos'))
+            },
+             set(value) {
+            this.setDataValue('fotos', JSON.stringify(value))
+            }
+            
         }
 
     

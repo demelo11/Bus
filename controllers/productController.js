@@ -7,6 +7,8 @@ const Bus = db.busses
 
 //1. create product
 
+
+
 const addBus = async ( req , res ) => {
 console.log(req.body)
     let info = {
@@ -18,6 +20,7 @@ console.log(req.body)
         cor: req.body.cor,
         quantidadeLugares: req.body.quantidadeLugares,
         fotos: req.body.fotos
+        
     }
     
     
@@ -32,14 +35,14 @@ console.log(bus)
 const getAllBusses = async (req, res) =>{
 
 let busses = await Bus.findAll({})
-res.status(200).send(bus)
+res.status(200).send(busses)
 }
 
 
 const getOneBus = async (req, res) =>{
 
     let id = req.params.id
-    let busses = await Bus.findOne({where : { id: id}})
+    let bus = await Bus.findOne({where : { id: id}})
     res.status(200).send(bus)
 }
 
